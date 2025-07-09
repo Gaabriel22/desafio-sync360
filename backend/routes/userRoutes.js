@@ -6,6 +6,6 @@ const { getUser, updateUser } = require("../controllers/userController")
 router.get("/:id", getUser)
 
 // POST /usuario/:id
-router.post(":/id", updateUser)
+router.post("/:id", updateUser)
 
 module.exports = router
