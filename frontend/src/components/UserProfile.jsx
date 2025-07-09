@@ -5,6 +5,18 @@ const UserProfile = ({ user, onEdit }) => {
     return date.toLocaleDateString("pt-BR")
   }
 
+  const calculateAge = (birthDate) => {
+    if (!birthDate) return ""
+    const birth = new Date(birthDate)
+    const today = new Date()
+    let age = today.getFullYear() - birth.getFullYear()
+    const m = today.getMonth() - birth.getMonth()
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+      age--
+    }
+    return age
+  }
+
   return (
     <div className="card shadow">
       <div className="card-header d-flex justify-content-between align-items-center">
@@ -29,6 +41,9 @@ const UserProfile = ({ user, onEdit }) => {
               <strong>Nome:</strong> {user.full_name}
             </p>
             <p>
+              <strong>Idade:</strong> {calculateAge(user.birth_date)}
+            </p>
+            <p>
               <strong>Email:</strong> {user.email}
             </p>
             <p>
@@ -49,6 +64,9 @@ const UserProfile = ({ user, onEdit }) => {
             </p>
             <p>
               <strong>CEP:</strong> {user.postal_code}
+            </p>
+            <p>
+              <strong>Biografia:</strong> {user.biography || "Não informada"}
             </p>
           </div>
         </div>

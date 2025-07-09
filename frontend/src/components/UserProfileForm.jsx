@@ -33,16 +33,27 @@ const UserProfileForm = ({ user, onSave, onCancel }) => {
             { label: "Estado", name: "state" },
             { label: "CEP", name: "postal_code" },
             { label: "Foto de perfil (URL)", name: "profile_picture" },
+            { label: "Biografia", name: "biography", type: "textarea" },
           ].map(({ label, name, type = "text" }) => (
             <div className="col-md-6 mb-3" key={name}>
               <label className="form-label">{label}</label>
-              <input
-                type={type}
-                name={name}
-                value={formData[name] || ""}
-                onChange={handleChange}
-                className="form-control"
-              />
+              {type === "textarea" ? (
+                <textarea
+                  name={name}
+                  value={formData[name] || ""}
+                  onChange={handleChange}
+                  className="form-control"
+                  rows={3}
+                />
+              ) : (
+                <input
+                  type={type}
+                  name={name}
+                  value={formData[name] || ""}
+                  onChange={handleChange}
+                  className="form-control"
+                />
+              )}
             </div>
           ))}
         </div>
