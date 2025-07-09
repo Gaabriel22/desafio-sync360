@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import UserProfile from "../components/UserProfile"
-import UserProfileForm from "../components/UserProfileForm"
+import UserProfile from "../components/UserProfile.jsx"
+import UserProfileForm from "../components/UserProfileForm.jsx"
 
 const ProfilePage = () => {
   const [user, setUser] = useState(null)
