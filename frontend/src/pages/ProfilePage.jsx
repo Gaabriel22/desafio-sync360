@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react"
-import axios from "axios"
 import UserProfile from "../components/UserProfile.jsx"
 import UserProfileForm from "../components/UserProfileForm.jsx"
+import { getUser, updateUser } from "../services/api"
 
 const ProfilePage = () => {
   const [user, setUser] = useState(null)
   const [editing, setEditing] = useState(false)
 
   useEffect(() => {
-    axios
-      .get("https://localhost:3000/usuario/1")
+    getUser(1)
       .then((res) => setUser(res.data))
       .catch((err) => {
         console.error("Erro ao carregar usuário", err)
@@ -17,8 +16,7 @@ const ProfilePage = () => {
   }, [])
 
   const handleSave = (updatedData) => {
-    axios
-      .post("https://localhost:3000/usuario/1", updatedData)
+    updateUser(1, updatedData)
       .then(() => {
         setUser(updatedData)
         setEditing(false)
