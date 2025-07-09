@@ -8,7 +8,8 @@ const app = express()
 
 // Middlewares
 app.use(cors())
-app.use(express.join())
+app.use(express.json())
+
 
 // Rotas
 app.use("/usuario", userRoutes)
