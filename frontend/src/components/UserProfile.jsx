@@ -1,4 +1,10 @@
 const UserProfile = ({ user, onEdit }) => {
+  const formatDate = (isoString) => {
+    if (!isoString) return ""
+    const date = new Date(isoString)
+    return date.toLocaleDateString("pt-BR")
+  }
+
   return (
     <div className="card shadow">
       <div className="card-header d-flex justify-content-between align-items-center">
@@ -29,7 +35,7 @@ const UserProfile = ({ user, onEdit }) => {
               <strong>Telefone:</strong> {user.phone_number}
             </p>
             <p>
-              <strong>Data de nascimento:</strong> {user.birth_date}
+              <strong>Data de nascimento:</strong> {formatDate(user.birth_date)}
             </p>
             <p>
               <strong>Endereço:</strong>{" "}
