@@ -27,11 +27,7 @@ DB_NAME=nome_do_banco
 PORT=3000
 ```
 
-````
-
 3. Instale as dependências e inicie o servidor:
-
-### 🗄️ Backend
 
 ```bash
 cd backend
@@ -84,7 +80,7 @@ CREATE TABLE users (
 
 ## 🌐 Deploy
 
-_Este projeto ainda não está publicado online._
+_Este projeto ainda não está publicado online._  
 Todas as instruções estão disponíveis acima para rodar localmente.
 
 ---
@@ -92,5 +88,3 @@ Todas as instruções estão disponíveis acima para rodar localmente.
 ## ❓ Dúvidas
 
 Qualquer dúvida ou problema, fique à vontade para entrar em contato.
-
-````
