@@ -9,7 +9,7 @@ const getUser = (req, res) => {
 
   userModel.getUserById(id, (err, user) => {
     if (err) {
-      console.err(err)
+      console.error(err)
       res.status(500).json({ error: "Erro ao consultar o usuário." })
     }
     if (!user) {
